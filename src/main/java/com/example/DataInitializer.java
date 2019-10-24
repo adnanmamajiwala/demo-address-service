@@ -17,7 +17,11 @@ public class DataInitializer {
 
     @Bean
     public CommandLineRunner run(AddressRepository repository) {
-        return args -> repository.saveAll(Arrays.asList(getAddresses()));
+        return args -> {
+            if (repository.count() == 0) {
+                repository.saveAll(Arrays.asList(getAddresses()));
+            }
+        };
     }
 
     private Address[] getAddresses() throws Exception {
