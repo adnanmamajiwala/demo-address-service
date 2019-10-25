@@ -12,7 +12,7 @@ import javax.validation.constraints.NotNull;
 public class Address {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = "address_sequence")
     private Long id;
 
     @NotNull

@@ -19,7 +19,10 @@ public class DataInitializer {
     public CommandLineRunner run(AddressRepository repository) {
         return args -> {
             if (repository.count() == 0) {
+                log.debug("No records found. Now inserting from data.json");
                 repository.saveAll(Arrays.asList(getAddresses()));
+            } else {
+                log.debug("Records are found.");
             }
         };
     }

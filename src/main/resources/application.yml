@@ -1,6 +1,10 @@
 spring:
   application:
     name: address-service
+  output:
+    ansi:
+      enabled: always
+
 
 management:
   endpoint:
@@ -10,3 +14,7 @@ management:
     web:
       exposure:
         include: '*'
+
+logging:
+  level:
+    com.example: debug

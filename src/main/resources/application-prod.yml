@@ -3,7 +3,8 @@ spring:
     active: prod
   jpa:
     database: mysql
+    hibernate:
+      ddl-auto: update
   datasource:
-    url:  jdbc:mysql://10.44.6.160:3306/innodb
-    data-username: innouser
-    data-password: innopass
+    url:  jdbc:mysql://innouser:innopass@10.44.6.160:3306/innodb
+#    url:  jdbc:mysql://innouser:innopass@127.0.0.1:3306/innodb
