@@ -6,9 +6,9 @@ pipeline {
                 script {
                     try {
                         sh '''
-                        ./mvnw clean package
+                        ./mvnw clean package -DskipTests
                         '''
-                    } catch (exc) {
+                    } catch (exec) {
                         throw exec
                     } finally {
                     }
