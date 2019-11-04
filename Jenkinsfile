@@ -6,7 +6,7 @@ pipeline {
                 script {
                     try {
                         sh '''
-                        ./mvnw clean package --stacktrace
+                        ./mvnw clean package
                         '''
                     } catch (exc) {
                         throw exec
